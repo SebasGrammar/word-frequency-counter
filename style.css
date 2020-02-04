@@ -19,3 +19,17 @@
     outline: none;
     resize: none;
 }
+
+/* RESULTS */
+
+.results {
+    background: #FFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.oe {
+    background: green;
+    width: 250px;
+    height: 100px;
+}

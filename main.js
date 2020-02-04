@@ -2,6 +2,12 @@ const input = document.querySelector(".input")
 const submit = document.querySelector(".submit")
 const results = document.querySelector(".results")
 
+const row = {
+    rank: document.querySelector(".rank"),
+    count: document.querySelector(".count"),
+    word: document.querySelector(".word")
+}
+
 function findWords(text) {
     return text.value.split(/[\W]/).filter(word => word)
 }
@@ -20,21 +26,14 @@ let elements = {
     p: 4
 }
 
-function test(thing) {
-    let row = document.createElement("div")
-    for (let element in thing) {
-        let counter = 0;
-        console.log(element)
-        while (counter < thing[element]) {
-            //console.log(element)
-            let object = document.createElement(element)
-            object.textContent = element
-            row.appendChild(object)
-            counter ++
-        }
-    }
-    return row
+function test({rank, count, word}) {
+    let oe = document.createElement("div")
+    oe.classList.add("oe")
+    rank.appendChild(oe)
+    
 }
+
+
 
 function createRow(container, child) {
     container.appendChild(child)
@@ -49,9 +48,8 @@ function createTable(object, container) {
 /************************************/
 
 submit.addEventListener("click", function () {
-    //console.log(countWords(findWords(input)))
-    //console.log(test(countWords(findWords(input))))
-    createTable(test(countWords(findWords(input))), results)
+    //results.appendChild(test(countWords(findWords(input))))
+    test(row)
 })
 
 //console.log(input.split(" "))
