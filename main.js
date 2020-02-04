@@ -24,9 +24,11 @@ function test(thing) {
     let row = document.createElement("div")
     for (let element in thing) {
         let counter = 0;
+        console.log(element)
         while (counter < thing[element]) {
+            //console.log(element)
             let object = document.createElement(element)
-            object.textContent = counter
+            object.textContent = element
             row.appendChild(object)
             counter ++
         }
@@ -48,8 +50,8 @@ function createTable(object, container) {
 
 submit.addEventListener("click", function () {
     //console.log(countWords(findWords(input)))
-    console.log(test(countWords(findWords(input))))
-    //createTable(countWords(findWords(input)), results)
+    //console.log(test(countWords(findWords(input))))
+    createTable(test(countWords(findWords(input))), results)
 })
 
 //console.log(input.split(" "))
