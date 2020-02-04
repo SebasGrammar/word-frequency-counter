@@ -23,33 +23,48 @@ function countWords(array) {
 /* CONVOLUTED ON PURPOSE - I'M GOING TO REFACTOR LATER ON. FOR NOW, I'LL JUST TEST A FEW THINGS */
 
 let elements = {
-    p: 4
+    p: 3
 }
 
-function test({rank, count, word}) {
-    let oe = document.createElement("div")
-    oe.classList.add("oe")
-    rank.appendChild(oe)
+// function test({rank, count, word}) {
+//     let oe = document.createElement("div")
+//     oe.classList.add("oe")
+//     rank.appendChild(oe)
+    
+// }
+
+// function createElement(object) {
+//     for (let element in object) {
+//         let thing = document.createElement("p")
+//         thing.textContent = element
+//         object[element].appendChild(thing)
+//     }
+// }
+
+function test(object, {count, word}) {
+
+    for (let thing in object) {
+        console.log(thing)
+        let p = document.createElement("p")
+        p.textContent = thing
+        word.appendChild(p)
+
+        let c = document.createElement("p")
+        c.textContent = object[thing]
+        count.appendChild(c)
+    }
     
 }
 
 
 
-function createRow(container, child) {
-    container.appendChild(child)
-}
-
-function createTable(object, container) {
-    for (let word in object) {
-        createRow(container, test(elements))
-    }
-}
-
 /************************************/
 
 submit.addEventListener("click", function () {
-    //results.appendChild(test(countWords(findWords(input))))
-    test(row)
+    console.log(countWords(findWords(input)))
+    test(countWords(findWords(input)), row)
+    
+    //test(row)
 })
 
 //console.log(input.split(" "))
