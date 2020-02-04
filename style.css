@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* TEXT AREA */
+
+.text-area {
+    background: red;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.input {
+    outline: none;
+    resize: none;
+}
