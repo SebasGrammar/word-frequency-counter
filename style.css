@@ -16,7 +16,7 @@ body {
     background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     align-items: ;
 }
 
@@ -77,12 +77,13 @@ h1 {
     background: #FFF;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
     width: ;
     text-align: center;
     grid-column-gap: 2px;
     max-height: 100vh;
     overflow-y: auto;
-
+    align-self: start;
 
 }
 
