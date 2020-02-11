@@ -2,6 +2,8 @@ const input = document.querySelector(".input")
 const submit = document.querySelector(".submit")
 const results = document.querySelector(".results")
 
+const text = document.querySelector(".text")
+
 const row = {
     rank: document.querySelector(".rank"),
     count: document.querySelector(".count"),
@@ -58,6 +60,8 @@ submit.addEventListener("click", function () {
     for (let property in row) {
         row[property].textContent = ""
     }
+
+    text.textContent = input.value
 
     let sortedObject = sortObject(countWords(findWords(input)))
 

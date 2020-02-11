@@ -6,18 +6,27 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #645394;
+}
+
 .app {
     width: 100%;
     min-height: 100vh;
     background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 2fr 1fr;
+    align-items: ;
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     color: #FFF;
+    text-align: center;
+    background: orange;
+    
+    grid-column: span 2;
 }
 
 .text-area, .results, textarea {
@@ -32,10 +41,10 @@ h1 {
     flex-direction: column;
 
     align-items: center;
-    justify-content: center;
+    justify-content: ;
     padding: 50px;
 
-    width: 80%;
+    flex: ;
     
 }
 
@@ -68,19 +77,30 @@ h1 {
     background: #FFF;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: 80%;
+    width: ;
     text-align: center;
     grid-column-gap: 2px;
+    max-height: 100vh;
+    overflow-y: auto;
+
+
 }
 
 .word > p:nth-child(odd), 
 .rank > p:nth-child(odd), 
 .count > p:nth-child(odd) {
+    background: #aaa0c4;
+}
+
+.word > p,
+.rank > p,
+.count > p {
     background: #EBE1DF;
 }
 
-.word {
-    
+.word, .rank, .count {
+    grid-row-gap: 2px;
+    display: grid;
 }
 
 .title {
