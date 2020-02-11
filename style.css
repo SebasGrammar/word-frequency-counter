@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .app {
+    width: 100%;
+    min-height: 100vh;
     background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
     display: flex;
     flex-direction: column;
@@ -19,11 +27,13 @@ h1 {
 /* TEXT AREA */
 
 .text-area {
-    background: ;
+    background: #645394;
     display: flex;
     flex-direction: column;
 
     align-items: center;
+    justify-content: center;
+    padding: 50px;
 
     width: 80%;
     
@@ -38,12 +48,44 @@ h1 {
     box-shadow: inset 0 0 5px gray;
 }
 
+.submit {
+    border: 3px solid #FFF;
+    color: #FFF;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.submit:active {
+    background: red;
+}
+
 /* RESULTS */
 
 .results {
     background: #FFF;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    text-align: center;
+    grid-column-gap: 2px;
+}
+
+.word > p:nth-child(odd), 
+.rank > p:nth-child(odd), 
+.count > p:nth-child(odd) {
+    background: #EBE1DF;
+}
+
+.word {
+    
+}
+
+.title {
+    background: #6CA0DC;
+    color: #FFF;
 }
 
 .oe {

@@ -9,7 +9,7 @@ const row = {
 }
 
 function findWords(text) {
-    return text.value.split(/[\W]/).filter(word => word)
+    return text.value.split(/[\W]/).filter(word => word).map(word => word.toLowerCase())
 }
 
 function countWords(array) {
@@ -55,11 +55,17 @@ function createElement(array, {count, word, rank}, object) {
 
 submit.addEventListener("click", function () {
 
+    for (let property in row) {
+        row[property].textContent = ""
+    }
+
     let sortedObject = sortObject(countWords(findWords(input)))
 
     createElement(sortedObject, row, countWords(findWords(input)))
 
     input.value = ""
+
+
 
 })
 
