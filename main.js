@@ -30,18 +30,10 @@ let elements = {
     p: 3
 }
 
-// function highlight(text, string) { // this right here is a good example of passing by value! i was expecting the function to mutate the text element, but it doesn't!
-//     console.log(text.textContent)
-//     console.log(text)
-//     //text.textContent.replace(string, `<span class="highlight">${string}<span>`)
-// }
-
 function highlight(string) {
 
-    //text.innerHTML = text.textContent.replace(string, `<span class="highlight">${string}</span>`)
-    // text.innerHTML = text.textContent.replace(new RegExp(string, "g"), `<span class="highlight">${string}</span>`)
-    text.innerHTML = text.textContent.replace(new RegExp(`\\b${string}\\b`, "g"), `<span class="highlight">${string}</span>`)
-    // the g flag doesn't seem to be working! check with upper and lower words
+    text.innerHTML = text.textContent.replace(new RegExp(`\\b${string}\\b`, "gi"), `<span class="highlight">${string}</span>`)
+
 }
 
 function createElement(array, {count, word, rank}, object) {
