@@ -40,7 +40,7 @@ function highlight(string) {
 
     //text.innerHTML = text.textContent.replace(string, `<span class="highlight">${string}</span>`)
     // text.innerHTML = text.textContent.replace(new RegExp(string, "g"), `<span class="highlight">${string}</span>`)
-    text.innerHTML = text.textContent.replace(new RegExp(string, "g"), `<span class="highlight">${string}</span>`)
+    text.innerHTML = text.textContent.replace(new RegExp(`\\b${string}\\b`, "g"), `<span class="highlight">${string}</span>`)
 
 }
 
