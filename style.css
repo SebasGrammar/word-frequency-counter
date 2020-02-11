@@ -67,6 +67,10 @@ h1 {
     border-radius: 3px;
 }
 
+.submit:hover {
+    background: #948ca8;
+}
+
 .submit:active {
     background: red;
 }
@@ -109,8 +113,18 @@ h1 {
     color: #FFF;
 }
 
-.oe {
-    background: green;
-    width: 250px;
-    height: 100px;
+.text {
+    background: #FFF;
+    margin-top: 20px;
+    border-radius: 3px;
+    padding: 10px;
+    text-justify: inter-word;
+    overflow-y: auto;
+    max-height: 200px;
+    
+}
+
+.highlight {
+    background: red;
+    color: #FFF;
 }
