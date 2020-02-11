@@ -15,18 +15,23 @@ function findWords(text) {
 function countWords(array) {
     let words = {}
     for (let word of array) {
-        words[word] ? words[word]++ : words[word] = 1
+        words[word] ? words[word] ++ : words[word] = 1
     }
-    return words
+    console.log(words) //.sort((x, y) => {return x - y}))
+    return words //.sort((x, y) => {return x - y})
 }
 
-/* CONVOLUTED ON PURPOSE - I'M GOING TO REFACTOR LATER ON. FOR NOW, I'LL JUST TEST A FEW THINGS */
+function sortObject(object) {
+    console.log(Object.keys(object).sort((x, y) => {return object[y] - object[x]}))
+}
+
+/* CONVOLUTED ON PURPOSE - I'M GOING TO REFACTOR LATER ON. FOR NOW, I'LL JUST createElement A FEW THINGS */
 
 let elements = {
     p: 3
 }
 
-// function test({rank, count, word}) {
+// function createElement({rank, count, word}) {
 //     let oe = document.createElement("div")
 //     oe.classList.add("oe")
 //     rank.appendChild(oe)
@@ -35,23 +40,26 @@ let elements = {
 
 // function createElement(object) {
 //     for (let element in object) {
-//         let thing = document.createElement("p")
-//         thing.textContent = element
-//         object[element].appendChild(thing)
+//         let property = document.createElement("p")
+//         property.textContent = element
+//         object[element].appendChild(property)
 //     }
 // }
 
-function test(object, {count, word}) {
+function createElement(object, {count, word}) {
 
-    for (let thing in object) {
-        console.log(thing)
-        let p = document.createElement("p")
-        p.textContent = thing
-        word.appendChild(p)
+    for (let property in object) {
 
-        let c = document.createElement("p")
-        c.textContent = object[thing]
-        count.appendChild(c)
+        let key = document.createElement("p")
+        key.textContent = property
+        word.appendChild(key)
+
+        let value = document.createElement("p")
+        value.textContent = object[property]
+        count.appendChild(value)
+
+        let rank = document.createElement("p")
+        
     }
     
 }
@@ -61,10 +69,11 @@ function test(object, {count, word}) {
 /************************************/
 
 submit.addEventListener("click", function () {
-    console.log(countWords(findWords(input)))
-    test(countWords(findWords(input)), row)
+    //console.log(countWords(findWords(input)))
+    sortObject(countWords(findWords(input)))
+    createElement(countWords(findWords(input)), row)
     
-    //test(row)
+    //createElement(row)
 })
 
 //console.log(input.split(" "))
