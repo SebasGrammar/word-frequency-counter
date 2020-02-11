@@ -76,9 +76,12 @@ function createElement(array, {count, word, rank}, object) {
 submit.addEventListener("click", function () {
     //console.log(countWords(findWords(input)))
     //console.log(sortObject(countWords(findWords(input))))
+
     let sortedObject = sortObject(countWords(findWords(input)))
 
     createElement(sortedObject, row, countWords(findWords(input)))
+
+    input.value = ""
     
     //createElement(row)
 })
