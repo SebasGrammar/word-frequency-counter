@@ -28,28 +28,8 @@ let elements = {
     p: 3
 }
 
-/*
-function createElement(object, {count, word}) {
-
-    for (let property in object) {
-
-        let key = document.createElement("p")
-        key.textContent = property
-        word.appendChild(key)
-
-        let value = document.createElement("p")
-        value.textContent = object[property]
-        count.appendChild(value)
-
-        let rank = document.createElement("p")
-        
-    }
-    
-}
-*/
-
 function createElement(array, {count, word, rank}, object) {
-    console.log(object)
+
     let index = 1
 
     for (let element of array) {
@@ -74,16 +54,13 @@ function createElement(array, {count, word, rank}, object) {
 /************************************/
 
 submit.addEventListener("click", function () {
-    //console.log(countWords(findWords(input)))
-    //console.log(sortObject(countWords(findWords(input))))
 
     let sortedObject = sortObject(countWords(findWords(input)))
 
     createElement(sortedObject, row, countWords(findWords(input)))
 
     input.value = ""
-    
-    //createElement(row)
+
 })
 
 //console.log(input.split(" "))
