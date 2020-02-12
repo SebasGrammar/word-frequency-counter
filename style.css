@@ -13,7 +13,7 @@ body {
 .app {
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    background: #7E6DAD;
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 3fr 1fr;
@@ -24,7 +24,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     color: #FFF;
     text-align: center;
-    background: orange;
+    background: #7E6DAD;
     
     grid-column: span 2;
 }
@@ -37,6 +37,7 @@ h1 {
 
 .text-area {
     background: #645394;
+    background: linear-gradient(110deg, #645394 60%, #7E6DAD 60%);
     display: flex;
     flex-direction: column;
 
@@ -78,7 +79,7 @@ h1 {
 /* RESULTS */
 
 .results {
-    background: #FFF;
+    background: #7E6DAD;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -94,7 +95,7 @@ h1 {
 .word > p:nth-child(odd), 
 .rank > p:nth-child(odd), 
 .count > p:nth-child(odd) {
-    background: #aaa0c4;
+    /* background: #aaa0c4; */
 }
 
 .word > p,
@@ -109,7 +110,7 @@ h1 {
 }
 
 .title {
-    background: #6CA0DC;
+    background: ;
     color: #FFF;
 }
 
