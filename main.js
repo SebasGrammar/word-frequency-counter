@@ -87,18 +87,19 @@ function createElement(array, {count, word, rank}, object) {
 
 submit.addEventListener("click", function () {
 
+    /* REFACTOR THIS BEFORE MOVING ON */
+
     for (let property in row) {
         row[property].textContent = ""
     }
 
     //if (input.value && !enabled) {
     if (input.value && !conditions.enabled) {
-        console.log(enabled)
         hide(app, "enabled")
         hide(results, "invisible")
         conditions.enabled = true
     }
-    console.log(enabled)
+
     text.textContent = input.value
 
     let sortedObject = sortObject(countWords(findWords(input)))
