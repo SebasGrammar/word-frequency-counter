@@ -6,6 +6,8 @@ const results = document.querySelector(".results")
 
 const text = document.querySelector(".text")
 
+const filter = document.querySelector(".filter")
+
 const row = {
     rank: document.querySelector(".rank"),
     count: document.querySelector(".count"),
@@ -92,7 +94,7 @@ function createElement(array, {count, word, rank}, object) {
 submit.addEventListener("click", function () {
 
     /* REFACTOR THIS BEFORE MOVING ON */
-
+    
     for (let property in row) {
         row[property].textContent = ""
     }
@@ -108,9 +110,19 @@ submit.addEventListener("click", function () {
     text.textContent = input.value
 
     //let sortedObject = sortObject(countWords(findWords(input)))
-    console.log(countWords(findWords(input)))
-    addFilter(sortObject(countWords(findWords(input))), ["the"])
-    let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
+    //console.log(countWords(findWords(input)))
+    //addFilter(sortObject(countWords(findWords(input))), ["the"])
+
+
+    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
+    //console.log(filter.value.split(","))
+
+    let f = filter.value.split(",")
+    console.log(f)
+    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), filter.value.split(""))
+    let sortedObject = addFilter(sortObject(countWords(findWords(input))), f)
+    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
+    //console.log(addFilter(sortObject(countWords(findWords(input))), filter.textContent.split(",")))
     createElement(sortedObject, row, countWords(findWords(input)))
 
     //input.value = ""
