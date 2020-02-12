@@ -147,6 +147,8 @@ h1 {
     text-justify: inter-word;
     overflow-y: auto;
     max-height: 200px;
+
+    display: none;
     
 }
 

@@ -97,6 +97,7 @@ submit.addEventListener("click", function () {
     if (input.value && !conditions.enabled) {
         hide(app, "enabled")
         hide(results, "invisible")
+        text.style.display = "block"
         conditions.enabled = true
     }
 
