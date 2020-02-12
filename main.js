@@ -109,26 +109,31 @@ submit.addEventListener("click", function () {
 
     text.textContent = input.value
 
-    //let sortedObject = sortObject(countWords(findWords(input)))
-    //console.log(countWords(findWords(input)))
-    //addFilter(sortObject(countWords(findWords(input))), ["the"])
-
-
-    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
-    //console.log(filter.value.split(","))
 
     let f = filter.value.split(",")
     console.log(f)
-    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), filter.value.split(""))
+
     let sortedObject = addFilter(sortObject(countWords(findWords(input))), f)
-    //let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
-    //console.log(addFilter(sortObject(countWords(findWords(input))), filter.textContent.split(",")))
+
     createElement(sortedObject, row, countWords(findWords(input)))
 
-    //input.value = ""
 
 
 
 })
 
-//console.log(input.split(" "))
+/*
+
+// There is an issue with texts containing HTML tags, like the one below.
+// These tags get rendered on the "text" div, so when you highlight, say, the word
+// label, what will actually happen is that you're going to have a bunch of label elements in the text.
+
+Associating a <label> with an <input> element offers some major advantages:
+
+The label text is not only visually associated with its corresponding text input; it is programmatically associated with it too. This means that, for example, a screenreader will read out the label when the user is focused on the form input, making it easier for an assistive technology user to understand what data should be entered.
+You can click the associated label to focus/activate the input, as well as the input itself. This increased hit area provides an advantage to anyone trying to activate the input, including those using a touch-screen device.
+To associate the <label> with an <input> element, you need to give the <input> an id attribute. The <label> then needs a for attribute whose value is the same as the input's id.
+
+Alternatively, you can nest the <input> directly inside the <label>, in which case the for and id attributes are not needed because the association is implicit:
+
+*/

@@ -20,18 +20,12 @@ body {
     align-items: ;
 }
 
-.disabled {
-    
-    
-}
-
 .enabled {
     grid-template-columns: 4fr 1fr;
     background: ;
 }
 
 .visible {
-    
     background: green;
 }
 
@@ -45,9 +39,8 @@ h1 {
     color: #FFF;
     text-align: center;
     background: #7E6DAD;
-    
     grid-column: span 2;
-    padding: 8px;
+    padding: 6px;
 }
 
 .text-area, .results, textarea {
@@ -61,13 +54,20 @@ h1 {
     background: linear-gradient(110deg, #645394 60%, #7E6DAD 60%);
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: ;
     padding: 50px;
+}
 
-    flex: ;
-    
+label {
+    color: #FFF
+}
+
+.filter {
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 5px;
 }
 
 .input {
@@ -77,6 +77,7 @@ h1 {
     width: 80%;
     height: 250px;
     box-shadow: inset 0 0 5px black;
+    margin-top: 20px;
 }
 
 .submit {
@@ -103,30 +104,20 @@ h1 {
     background: #7E6DAD;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
     width: ;
     text-align: center;
     grid-column-gap: 2px;
     max-height: 100vh;
     overflow-y: auto;
     align-self: start;
-
     display: none;
-
-
-    
-
 }
 
-.word > p:nth-child(odd), 
-.rank > p:nth-child(odd), 
-.count > p:nth-child(odd) {
+.word>p:nth-child(odd), .rank>p:nth-child(odd), .count>p:nth-child(odd) {
     /* background: #aaa0c4; */
 }
 
-.word > p,
-.rank > p,
-.count > p {
+.word>p, .rank>p, .count>p {
     background: #EBE1DF;
 }
 
@@ -148,9 +139,7 @@ h1 {
     text-justify: inter-word;
     overflow-y: auto;
     max-height: 200px;
-
     display: none;
-    
 }
 
 .highlight {
