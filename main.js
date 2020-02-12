@@ -48,6 +48,10 @@ function highlight(string) {
 
 }
 
+function addFilter(array, filter) {
+    return array.filter(word => !filter.includes(word))
+}
+
 function createElement(array, {count, word, rank}, object) {
 
     let index = 1
