@@ -1,3 +1,5 @@
+const app = document.querySelector(".app")
+
 const input = document.querySelector(".input")
 const submit = document.querySelector(".submit")
 const results = document.querySelector(".results")
@@ -10,8 +12,18 @@ const row = {
     word: document.querySelector(".word")
 }
 
+const conditions = {
+    enabled: false
+}
+
+let enabled = false
+
 function findWords(text) {
     return text.value.split(/[\W]/).filter(word => word).map(word => word.toLowerCase())
+}
+
+function hide(element, className) {
+    element.classList.toggle(className)
 }
 
 function countWords(array) {
@@ -79,13 +91,21 @@ submit.addEventListener("click", function () {
         row[property].textContent = ""
     }
 
+    //if (input.value && !enabled) {
+    if (input.value && !conditions.enabled) {
+        console.log(enabled)
+        hide(app, "enabled")
+        hide(results, "invisible")
+        conditions.enabled = true
+    }
+    console.log(enabled)
     text.textContent = input.value
 
     let sortedObject = sortObject(countWords(findWords(input)))
 
     createElement(sortedObject, row, countWords(findWords(input)))
 
-    input.value = ""
+    //input.value = ""
 
 
 

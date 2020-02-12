@@ -16,8 +16,28 @@ body {
     background: #7E6DAD;
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr;
     align-items: ;
+}
+
+.disabled {
+    
+    
+}
+
+.enabled {
+    grid-template-columns: 4fr 1fr;
+    background: ;
+}
+
+.visible {
+    
+    background: green;
+}
+
+.invisible {
+    display: grid !important;
+    background: red;
 }
 
 h1 {
@@ -89,6 +109,11 @@ h1 {
     max-height: 100vh;
     overflow-y: auto;
     align-self: start;
+
+    display: none;
+
+
+    
 
 }
 
