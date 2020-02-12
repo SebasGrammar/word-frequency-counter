@@ -13,7 +13,7 @@ const row = {
 }
 
 const conditions = {
-    enabled: false
+    enabled: false,
 }
 
 let enabled = false
@@ -107,8 +107,10 @@ submit.addEventListener("click", function () {
 
     text.textContent = input.value
 
-    let sortedObject = sortObject(countWords(findWords(input)))
-
+    //let sortedObject = sortObject(countWords(findWords(input)))
+    console.log(countWords(findWords(input)))
+    addFilter(sortObject(countWords(findWords(input))), ["the"])
+    let sortedObject = addFilter(sortObject(countWords(findWords(input))), ["the"])
     createElement(sortedObject, row, countWords(findWords(input)))
 
     //input.value = ""
