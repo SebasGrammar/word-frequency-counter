@@ -49,6 +49,14 @@ h1 {
 
 /* TEXT AREA */
 
+.filter-section {
+    display: flex;
+    align-items: center;
+    background: red !important;
+    width: 80%;
+    height: 50px;
+}
+
 .text-area {
     background: #645394;
     background: linear-gradient(110deg, #645394 60%, #7E6DAD 60%);

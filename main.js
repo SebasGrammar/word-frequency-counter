@@ -8,6 +8,8 @@ const text = document.querySelector(".text")
 
 const filter = document.querySelector(".filter")
 
+const number = document.querySelector(".number")
+
 const row = {
     rank: document.querySelector(".rank"),
     count: document.querySelector(".count"),
@@ -22,6 +24,12 @@ let enabled = false
 
 function findWords(text) {
     return text.value.split(/[\W]/).filter(word => word).map(word => word.toLowerCase())
+    //return text.value.split(/[\s]/).filter(word => word).map(word => word.toLowerCase())
+    
+}
+
+function getNumber(text) {
+    return text.value.split(/[\s]/).length
 }
 
 function hide(element, className) {
@@ -114,6 +122,11 @@ submit.addEventListener("click", function () {
     console.log(f)
 
     let sortedObject = addFilter(sortObject(countWords(findWords(input))), f)
+
+    console.log(findWords(input))
+    let amount = getNumber(input)
+
+    number.textContent = amount
 
     createElement(sortedObject, row, countWords(findWords(input)))
 
