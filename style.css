@@ -21,7 +21,7 @@ body {
 }
 
 .enabled {
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     background: ;
 }
 
@@ -43,7 +43,7 @@ h1 {
     padding: 6px;
 }
 
-.text-area, .results, textarea {
+.text-area, .results, textarea, .filter {
     font-family: 'Merriweather', serif;
 }
 
