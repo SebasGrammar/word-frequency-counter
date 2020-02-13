@@ -29,7 +29,7 @@ function findWords(text) {
 }
 
 function getNumber(text) {
-    return text.value.split(/[\s]/).length
+    return text.value.split(/[\s\r\n]/).filter(word => word).length
 }
 
 function hide(element, className) {
