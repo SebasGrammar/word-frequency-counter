@@ -25,7 +25,7 @@ let enabled = false
 function findWords(text) {
     return text.value.split(/[\W]/).filter(word => word).map(word => word.toLowerCase())
     //return text.value.split(/[\s]/).filter(word => word).map(word => word.toLowerCase())
-    
+
 }
 
 function getNumber(text) {
@@ -39,13 +39,13 @@ function hide(element, className) {
 function countWords(array) {
     let words = {}
     for (let word of array) {
-        words[word] ? words[word] ++ : words[word] = 1
+        words[word] ? words[word]++ : words[word] = 1
     }
     return words
 }
 
 function sortObject(object) {
-    return Object.keys(object).sort((x, y) => {return object[y] - object[x]})
+    return Object.keys(object).sort((x, y) => { return object[y] - object[x] })
 }
 
 let elements = {
@@ -62,7 +62,7 @@ function addFilter(array, filter) {
     return array.filter(word => !filter.includes(word))
 }
 
-function createElement(array, {count, word, rank}, object) {
+function createElement(array, { count, word, rank }, object) {
 
     let index = 1
 
@@ -76,7 +76,7 @@ function createElement(array, {count, word, rank}, object) {
 
         console.log(text.textContent)
 
-        key.addEventListener("click", function() {
+        key.addEventListener("click", function () {
             highlight(element)
         })
 
@@ -90,9 +90,9 @@ function createElement(array, {count, word, rank}, object) {
         position.textContent = index
         rank.appendChild(position)
 
-        index ++
+        index++
     }
-    
+
 }
 
 
@@ -102,7 +102,7 @@ function createElement(array, {count, word, rank}, object) {
 submit.addEventListener("click", function () {
 
     /* REFACTOR THIS BEFORE MOVING ON */
-    
+
     for (let property in row) {
         row[property].textContent = ""
     }
@@ -124,14 +124,25 @@ submit.addEventListener("click", function () {
     let sortedObject = addFilter(sortObject(countWords(findWords(input))), f)
 
     console.log(findWords(input))
-    let amount = getNumber(input)
+    // let amount = getNumber(input)
 
-    number.textContent = amount
+    // number.textContent = amount
 
     createElement(sortedObject, row, countWords(findWords(input)))
 
 
 
+
+})
+
+// not reliable yet...
+
+input.addEventListener("input", function () {
+    
+    let amount = getNumber(input)
+    console.log(amount)
+
+    number.textContent = amount
 
 })
 

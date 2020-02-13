@@ -52,9 +52,10 @@ h1 {
 .filter-section {
     display: flex;
     align-items: center;
-    background: red !important;
+    background: ;
     width: 80%;
-    height: 50px;
+    height: 40px;
+    color: #FFF;
 }
 
 .text-area {
@@ -86,6 +87,10 @@ label {
     height: 250px;
     box-shadow: inset 0 0 5px black;
     margin-top: 20px;
+}
+
+.number-of-words {
+    margin-left: 10px;
 }
 
 .submit {
